@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdullah.exe (2050 Edition) — Chat with Future Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+  <div class="glow-orb glow-orb--1"></div>
+  <div class="glow-orb glow-orb--2"></div>
+
+  <div class="app">
+    <header class="terminal-header">
+      <div class="terminal-header__left">
+        <span class="terminal-dot terminal-dot--red"></span>
+        <span class="terminal-dot terminal-dot--yellow"></span>
+        <span class="terminal-dot terminal-dot--green"></span>
+        <span class="terminal-title">abdullah.exe — 2050 Edition</span>
+      </div>
+      <div class="terminal-header__right">
+        <span class="status-pill status-pill--online" id="connectionStatus">● CONNECTING...</span>
+        <span class="status-pill status-pill--engine" id="engineBadge">engine: —</span>
+        <span class="status-pill" id="clock">2050-??-??</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2 class="panel__title">&gt; memory_timeline.log</h2>
+          <div class="timeline" id="timeline"></div>
+        </section>
+
+        <section class="panel panel--counters">
+          <div class="counter counter--regret">
+            <span class="counter__label">regret_counter</span>
+            <span class="counter__value" id="regretCount">—</span>
+            <span class="counter__unit">units</span>
+          </div>
+          <div class="counter counter--best">
+            <span class="counter__label">best_decision_counter</span>
+            <span class="counter__value" id="bestCount">—</span>
+            <span class="counter__unit">units</span>
+          </div>
+        </section>
+
+        <section class="panel panel--info">
+          <p class="info-line"><span class="info-key">subject:</span> Md. Abdullah</p>
+          <p class="info-line"><span class="info-key">age:</span> 70 (2050)</p>
+          <p class="info-line"><span class="info-key">origin:</span> NSTU · ICT</p>
+          <p class="info-line"><span class="info-key">backend:</span> Python FastAPI</p>
+          <p class="info-line"><span class="info-key">session:</span> <span id="sessionShort">—</span></p>
+        </section>
+      </aside>
+
+      <main class="chat-area">
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <div class="quick-actions">
+          <button class="quick-btn" data-topic="salary" title="How much do I earn in 2050?">💰 Future Salary</button>
+          <button class="quick-btn" data-topic="career" title="Government or private — what happened?">🏢 Career Path</button>
+          <button class="quick-btn" data-topic="sideproject" title="Which project changed my life?">🚀 Side Project</button>
+          <button class="quick-btn" data-topic="savings" title="Did I build my dream house?">🏠 Savings & House</button>
+          <button class="quick-btn" data-topic="marriage" title="How did married life go?">❤️ Marriage Life</button>
+          <button class="quick-btn" data-topic="achievement" title="What am I most proud of?">📈 Biggest Achievement</button>
+        </div>
+
+        <form class="chat-input-form" id="chatForm">
+          <span class="input-prompt">&gt;</span>
+          <input
+            type="text"
+            id="chatInput"
+            class="chat-input"
+            placeholder="Ask Future Abdullah anything..."
+            autocomplete="off"
+            maxlength="500"
+            disabled
+          />
+          <button type="button" class="voice-btn" id="voiceBtn" title="Toggle voice replies" aria-label="Toggle voice replies">
+            <span class="voice-icon">🔊</span>
+          </button>
+          <button type="submit" class="send-btn" id="sendBtn" disabled>SEND</button>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
